@@ -1,0 +1,78 @@
+nemerle
+------------------------------------------
+Nemerle is a high-level statically-typed programming language for the 
+.NET platform. It offers functional, object-oriented and imperative 
+features. It has a simple C#-like syntax and a powerful meta-programming 
+system.
+
+Features that come from the functional land are variants, pattern 
+matching, type inference and parameter polymorphism (aka generics). The 
+meta-programming system allows great compiler extensibility, embedding 
+domain specific languages, partial evaluation and aspect-oriented 
+programming.
+
+Runtime requirements:
+  mono-1.9.1-1
+
+Canonical website:
+  http://nemerle.org/
+
+Canonical download:
+  http://nemerle.org/download/
+
+-------------------------------------------
+
+Build instructions:
+  unpack nemerle-0.9.3-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./nemerle-0.9.3-X.cygport all
+
+This will create:
+  /usr/src/nemerle-0.9.3-X-src.tar.bz2
+  /usr/src/nemerle-0.9.3-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/cs2n
+  /usr/bin/ncc
+  /usr/bin/nemish
+  /usr/lib/mono/gac/Nemerle.CSharp.CS/0.9.3.0__5291d186334f6101/Nemerle.CSharp.CS.dll
+  /usr/lib/mono/gac/Nemerle.CSharp/0.9.3.0__5291d186334f6101/Nemerle.CSharp.dll
+  /usr/lib/mono/gac/Nemerle.Compiler/0.9.3.0__5291d186334f6101/Nemerle.Compiler.dll
+  /usr/lib/mono/gac/Nemerle.Evaluation/0.9.3.0__5291d186334f6101/Nemerle.Evaluation.dll
+  /usr/lib/mono/gac/Nemerle.Macros/0.9.3.0__5291d186334f6101/Nemerle.Macros.dll
+  /usr/lib/mono/gac/Nemerle/0.9.3.0__e080a9c724e2bfcd/Nemerle.dll
+  /usr/lib/mono/gac/antlr.runtime/2.7.5.50000__e080a9c724e2bfcd/antlr.runtime.dll
+  /usr/lib/mono/nemerle/Nemerle.CSharp.CS.dll
+  /usr/lib/mono/nemerle/Nemerle.CSharp.dll
+  /usr/lib/mono/nemerle/Nemerle.Compiler.dll
+  /usr/lib/mono/nemerle/Nemerle.Evaluation.dll
+  /usr/lib/mono/nemerle/Nemerle.Macros.dll
+  /usr/lib/mono/nemerle/Nemerle.dll
+  /usr/lib/mono/nemerle/antlr.runtime.dll
+  /usr/lib/mono/nemerle/cs2n.exe
+  /usr/lib/mono/nemerle/ncc.exe
+  /usr/lib/mono/nemerle/nemish.exe
+  /usr/share/NAnt/bin/Nemerle.NAnt.Tasks.dll
+  /usr/share/doc/nemerle-0.9.3/README
+  /usr/share/doc/nemerle-0.9.3/html/Courses.html
+  /usr/share/doc/nemerle-0.9.3/html/Grokking_Nemerle.html
+  /usr/share/doc/nemerle-0.9.3/html/Macros.html
+  /usr/share/doc/nemerle-0.9.3/html/Quick_Guide.html
+  /usr/share/doc/nemerle-0.9.3/html/Tutorials_and_examples.html
+  /usr/share/man/man1/ncc.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.9.3-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

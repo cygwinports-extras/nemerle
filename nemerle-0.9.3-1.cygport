@@ -1,0 +1,33 @@
+inherit mono
+
+DESCRIPTION="Nemerle .NET programming language"
+HOMEPAGE="http://www.nemerle.org/"
+SRC_URI="http://www.nemerle.org/download/unix-binary/${PN}-bin-${PV}-1.tgz"
+SRC_DIR="${PN}-bin-${PV}-1"
+
+src_compile() { :; }
+
+src_test() { :; }
+
+src_install() {
+	cd ${S}
+	insinto /usr/lib/mono/nemerle
+
+	for x in cs2n ncc nemish
+	do
+		doins bin/${x}.exe
+		mono_wrapper ${x} /usr/lib/mono/nemerle/${x}.exe
+	done
+
+	for a in gac/*.dll
+	do
+		dogac ${a} nemerle
+	done
+
+	doman misc/ncc.1
+
+	insinto /usr/share/NAnt/bin
+	doins misc/Nemerle.NAnt.Tasks.dll
+}
+
+HTMLDOCS="doc/*.html"
