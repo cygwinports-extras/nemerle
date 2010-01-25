@@ -1,0 +1,34 @@
+inherit mono
+
+DESCRIPTION="Nemerle .NET programming language"
+HOMEPAGE="http://www.nemerle.org/"
+SRC_URI="http://www.nemerle.org/download/unix-binary/${PN}-bin-${PV}-1.tgz"
+SRC_DIR="${PN}-bin-${PV}-1"
+
+# Currently, Mono is unable to build this package from source, see:
+# https://bugzilla.novell.com/show_bug.cgi?id=467834
+# http://bugs.gentoo.org/show_bug.cgi?id=259700#c3
+
+src_compile() { :; }
+
+src_test() { :; }
+
+src_install() {
+	cd ${S}
+	insinto /usr/lib/nemerle
+
+	for x in cs2n ncc nemish
+	do
+		doins bin/${x}.exe
+		mono_wrapper ${x} /usr/lib/nemerle/${x}.exe
+	done
+
+	doins gac/*.dll
+	doins misc/Nemerle.NAnt.Tasks.dll
+
+	dogac gac/Nemerle.dll gac/Nemerle.{Compiler,Macros}.dll
+
+	doman misc/ncc.1
+}
+
+HTMLDOCS="doc/*.html"

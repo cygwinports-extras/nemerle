@@ -1,4 +1,4 @@
-category: Dotnet Interpreters
+category: DotNET Interpreters
 requires: mono
 sdesc: "Nemerle .NET language compiler and interpreter"
 ldesc: "Nemerle is a high-level statically-typed programming language 
